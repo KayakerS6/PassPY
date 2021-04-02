@@ -1,0 +1,86 @@
+import codecs
+import os
+import os.path
+
+#Startup Phase
+print("Welcome to PassPY, the python based, opensource password...")
+start = input("Press ENTER to start")
+
+login = 0
+while login < 3:
+    print("Welcome!\n *UNDER CONSTRUCTION* 1:  New users - register your account\n 2:  Existing users - log in\n 3:  Exit - close the application.")
+    login = int(input("Enter a number:\n"))
+#registration
+    if login == 1:
+        print("New user registration is curently under construction")
+        #print("user name rules:\n1: ")
+        NewUser = input("Enter Username:  ")
+        nametest = NewUser + ".txt"
+        try:
+            usersearch = open(nametest)  #search for user's password file
+            usersearch.close()
+            print("User name not available")
+            #print("user name rules:\n1: ")
+            NewUser = input("Try another Username:  ")
+            nametest = NewUser + ".txt"
+        except FileNotFoundError:
+            print("User name is available")
+            
+        create = open(nametest,"a")  #create user's password file
+        password = input("Enter password:  ")
+        cypher = codecs.encode(password, 'rot13')
+        create.write("\n" + cypher)
+        create.close()
+        print("Done!  New account created!\nWelcome.")
+   
+
+    elif login == 2:
+        
+        #Login Process
+        user_name = input("Enter Username: ")
+        nametest = user_name + ".txt"
+        try:
+            usersearch = open(nametest,"r")  #search for user's password file
+            lst = list(usersearch.readlines())
+            confirm = lst[len(lst)-1]
+            print("Hello " + user_name)
+            password = input("Enter Password: ")
+            compare = codecs.encode(password, 'rot13')
+
+            #the issue is between here
+            if compare == confirm:
+                print("Access Granted")
+            else:
+                print("else triggered.  Access Denied")
+                #exit(exit())
+        except FileNotFoundError:
+            print("Access Denied")
+            exit(exit())
+        #and here
+        
+        menu = 0
+        while menu < 4:
+            print("Menu:\n  1:  New password - register new password\n  2:  List - show passwords\n  3:  *UNDER CONSTRUCTION* Register new user - create another user account\n  4:  Exit")
+            menu = int(input("Enter a number:\n"))
+            if menu == 1:
+                filea = open("passwords.txt","a")
+                inputask = input("Input new password: ")
+                cypher = codecs.encode(inputask, 'rot13')
+                filea.write("\n" + cypher)
+                filea.close()
+                print("Done!")
+            elif menu == 2:
+                filer = open("passwords.txt","r") #"a+" isn't reading the file
+                contents = filer.read()
+                plaintext = codecs.encode(contents, 'rot13')
+                print("Current Passwords: \n" + plaintext)
+                filer.close()
+            elif menu == 3:
+                print("New user registration is curently under construction.\n Menu:\n  1:  new password - register new password\n  2:  list - show passwords\n  4:  Exit")
+                menu = int(input("Enter a number:\n"))
+            elif menu == 4:
+                filea.close()
+                filer.close()
+                exit(exit())
+    elif login == 3:
+        exit()
