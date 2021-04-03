@@ -46,8 +46,7 @@ while login < 3:
             print("Hello " + user_name)
             password = input("Enter Password: ")
             compare = codecs.encode(password, 'ROT13')
-
-            #the issue is between here
+            
             if compare == confirm:
                 print("Access Granted")
             else:
@@ -57,7 +56,6 @@ while login < 3:
             print("Access Denied")
             input("please press enter to continue")
             exit(exit())
-        #and here
         
         menu = 0
         while menu < 4:
