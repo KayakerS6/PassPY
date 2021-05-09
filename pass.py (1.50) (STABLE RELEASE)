@@ -3,6 +3,7 @@ import os
 import os.path
 import string
 import random 
+nametest3 = NewUserLogin + "passwords" + ".txt"
 
 #Startup Phase
 print("Welcome to PassPY, the python based, opensource password...")
@@ -24,7 +25,7 @@ while login < 3:
             print("User name not available")
             #print("user name rules:\n1: ")
             NewUserLogin = input("Try another Username:  ")
-            nametest1 = NewUserLogin + ".txt"
+            nametest1 = NewUserLogin + "login" + ".txt"
         except FileNotFoundError:
             print("User name is available")
             
@@ -73,7 +74,7 @@ while login < 3:
                 filea.close()
                 print("Done!")
             elif menu == 2:
-                filer = open(nametest2,"r") #"a+" isn't reading the file
+                filer = open(nametest3,"r") #"a+" isn't reading the file
                 contents = filer.read()
                 plaintext = codecs.encode(contents, 'ROT13')
                 print("Current Passwords: \n" + plaintext)
