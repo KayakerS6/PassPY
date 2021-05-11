@@ -3,7 +3,6 @@ import os
 import os.path
 import string
 import random 
-nametest3 = NewUserLogin + "passwords" + ".txt"
 
 #Startup Phase
 print("Welcome to PassPY, the python based, opensource password...")
@@ -61,6 +60,8 @@ while login < 3:
             input("please press enter to continue")
             exit(exit())
         #and here
+
+        nametest3 = NewUserLogin + "passwords" + ".txt"
         
         menu = 0
         while menu < 4:
