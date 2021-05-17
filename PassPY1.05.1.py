@@ -1,5 +1,6 @@
 """ToDo:  
 encrypted file for data table
+random password generator
 data table; account name, username, password, url?
 search data table
 stronger login
@@ -128,16 +129,16 @@ while login < 3:
             exit(exit())
         #and here
 
-        nametest3 = NewUserLogin + "passwords" + ".txt"
+        nametest3 = user_name + "passwords" + ".txt"
         
         menu = 0
         while menu < 4:
             header()
-            print("Menu:\n  1:  New password - register new password\n  2:  List - show passwords\n  3:  *UNDER CONSTRUCTION* Register new user - create another user account\n  4:  create a random password\n 5:  Exit")
+            print("Menu:\n  1:  New password - register new password\n  2:  List - show passwords\n  3:  *UNDER CONSTRUCTION* Register new user - create another user account\n  4:  Exit")
             menu = int(input("Enter a number:\n"))
             if menu == 1:
                 header()
-                filea = open(NewUserLogin + "passwords" + ".txt","a")
+                filea = open(user_name + "passwords" + ".txt","a")
                 inputask = input("Input new password: ")
                 cypher = codecs.encode(inputask, 'ROT13')
                 filea.write("\n" + cypher)
@@ -148,7 +149,7 @@ while login < 3:
                 filer = open(nametest3,"r") #"a+" isn't reading the file
                 contents = filer.read()
                 plaintext = codecs.encode(contents, 'ROT13')
-                print("Current Passwords: \n" + plaintext)
+                input("Current Passwords: \n" + plaintext)
                 filer.close()
             elif menu == 3:
                 header()
