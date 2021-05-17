@@ -149,7 +149,7 @@ while login < 3:
                 filer = open(nametest3,"r") #"a+" isn't reading the file
                 contents = filer.read()
                 plaintext = codecs.encode(contents, 'ROT13')
-                input("Current Passwords: \n(Press Ennter to continue)\n" + plaintext)
+                input("Current Passwords: \n(Press Enter to continue)\n" + plaintext)
                 filer.close()
             elif menu == 3:
                 header()
