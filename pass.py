@@ -45,7 +45,7 @@ def PassGen():
             div = int(length/3)
             r = int(length%3)
             seed = string.ascii_letters    # Generating letters
-            letters = ( ''.join(random.choice(seed) for i in range(div)) )
+            letters = ( ''.  join(random.choice(seed) for i in range(div)) )
 
             seed = string.digits    # generating digits
             numbers = ( ''.join(random.choice(seed) for i in range(div)) )
@@ -139,22 +139,23 @@ while login < 3:
             if menu == 1:
                 header()
                 filea = open(user_name + "passwords" + ".txt","a")
+                location = input("what is this password for? ")
                 PassGen()
                 #inputask = input("Input new password: ")
-                cypher = codecs.encode(PassGen.password, 'ROT13')
-                filea.write("\n" + cypher)
+                cypher == codecs.encode(location + "-" + PassGen.password, 'ROT13')
+                filea.write("\n" cypher)
                 filea.close()
                 print("Done!")
             elif menu == 2:
                 #logo()
                 filer = open(nametest3,"r") #"a+" isn't reading the file
                 contents = filer.read()
-                plaintext = codecs.encode(contents, 'ROT13')
+                passwords = codecs.encode(contents, 'ROT13') 
                 count = contents.splitlines()
                 ReadSize = "mode con: cols=100 lines=" + str(int(len(count)) + 13)
                 os.system(ReadSize)
                 logo()
-                input("Current Passwords: \n(Press Enter to continue)\n" + plaintext)
+                input("Current Passwords: \n(Press Enter to continue)\n" + passwords)
                 filer.close()
             elif menu == 3:
                 header()
