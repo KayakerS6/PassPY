@@ -143,7 +143,7 @@ while login < 3:
                 PassGen()
                 #inputask = input("Input new password: ")
                 cypher == codecs.encode(location + "-" + PassGen.password, 'ROT13')
-                filea.write("\n" cypher)
+                filea.write("\n" + cypher)
                 filea.close()
                 print("Done!")
             elif menu == 2:
