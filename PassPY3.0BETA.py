@@ -63,17 +63,12 @@ def PassGen(user_name,account,username):
         elif x == 2:
             header()
             PassGen.password = input("Type the password, then press Enter: \n")
-            print(account)
-            print(username)
-            print(PassGen.password)
             account = codecs.encode(account, 'ROT13')
             username = codecs.encode(username, 'ROT13')
             PassGen.password = codecs.encode(PassGen.password, 'ROT13')
             newline = account + "," + username + "," + PassGen.password
-            print(newline)
             with open(user_name + "passwords" + ".csv", "a", newline="\n") as filea:
                 filea.write(newline + "\n")
-                print(filea)
             input("Press Enter...")
             MainMenu(user_name)
         else:
@@ -204,7 +199,7 @@ def Login():
 
 #Startup Phase
 header()
-print("Welcome to PassPY, the python based, opensource password...")
+print("Welcome to PassPY, the python based, opensource password storage\nIf you like PassPY, share it with a friend github.com/kayakers6/passpy\nIf you love PassPY, BTC:  bc1qsqc3v2jt3lh0kq9addf4gu6e2uq5vxxfk35pl\n                    SNX:  0x05E8813B7dc3c4e039D898CB13f21A6E4d675bc1")
 start = input("Press ENTER to start")
 Login()
 # login = 0
