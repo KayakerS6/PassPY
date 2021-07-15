@@ -193,6 +193,6 @@ def Login():
 
 #Start the actual program
 header()
-print("Welcome to PassPY, the python based, opensource password storage\nIf you like PassPY, share it with a friend github.com/kayakers6/passpy\nIf you love PassPY, BTC:  bc1qsqc3v2jt3lh0kq9addf4gu6e2uq5vxxfk35pl\n                    SNX:  0x05E8813B7dc3c4e039D898CB13f21A6E4d675bc1")
+print("Welcome to PassPY, the python based, opensource password storage\nPlease submit any issues/bugs/change requests to Github.com/kayakers6/PassPY or email kayakers6@gmail.com\nIf you like PassPY, share it with a friend github.com/kayakers6/passpy\nIf you love PassPY, BTC:  bc1qsqc3v2jt3lh0kq9addf4gu6e2uq5vxxfk35pl\n                    SNX:  0x05E8813B7dc3c4e039D898CB13f21A6E4d675bc1")
 start = input("Press ENTER to start")
 Login()
