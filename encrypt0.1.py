@@ -6,9 +6,9 @@ import binascii
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives.ciphers.modes import CTR
 
-account = "LMS"
-userName = "bjacobson@nhlearninggroup.com"
-password = "P@ssw0rd"
+account = input("what is the name of the account you want to encrypt? \n")
+userName = input("What is the username of the account you want to encrypt?  \n")
+password = input("What is the password for the account you want to encrypt?  \n")
 
 preKey = account + userName + password
 lineHash = hashlib.sha256(preKey.encode('utf-8'))
